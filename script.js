@@ -41,7 +41,16 @@ function Timer(){
     }
 
 //Display updated time value to user
+if(seconds === -1 && hundredths === 99){
+    document.getElementById("display").innerHTML = "Stop!";
+    window.clearInterval(interval);
+    document.getElementById("StartStop").innerHTML = "Start";
+    status = "End"
+}
+else{
 document.getElementById("display").innerHTML = displaySeconds + ":" + displayHundredths;
+}
+
 }
 
 //show beginning time to user
@@ -59,8 +68,17 @@ function StartStop(){
         interval = window.setInterval(Timer, 10);
         document.getElementById("StartStop").innerHTML = "Stop";
         status = "Started";
-        }
-        else{
+
+        } else if(status === "End"){
+            window.clearInterval(interval);
+            seconds = TimerLength;
+            hundredths = 0;
+            document.getElementById("display").innerHTML = seconds + ":" + "00"
+            interval = window.setInterval(Timer, 10);
+            document.getElementById("StartStop").innerHTML = "Stop";
+            status = "Started";
+
+        } else{
 
             window.clearInterval(interval);
             document.getElementById("StartStop").innerHTML = "Start";
@@ -88,4 +106,6 @@ function getInput() {
     console.log(userInput);
     console.log(TimerLength);
 }  
+
+
 

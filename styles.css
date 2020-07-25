@@ -1,4 +1,4 @@
-.container{
+.container1{
     height: 300px;
     width: 100%;
 }
@@ -12,4 +12,14 @@
 
 .buttons{
     text-align: center;
+    
+}
+
+
+#nameForm{
+    text-align: center;
+    margin: 50px auto;
+}
+#subButton{
+    margin: 10px auto;
 }

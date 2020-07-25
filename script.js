@@ -1,6 +1,6 @@
 // Define vars to hold time values
 
-let TimerLength = 0;
+let TimerLength = 45;
 let seconds = 45;
 
 
